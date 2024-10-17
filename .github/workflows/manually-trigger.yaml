@@ -7,11 +7,16 @@ on:
                 type: string
                 required: true
                 default: "Default value"
+            number:
+                description: A number input
+                type: number
+                default: 4
 
 jobs:
     log-info:
         runs-on: ubuntu-latest
         steps:
             - run: echo $GITHUB_REF
-            - run: 
-                echo "String: ${{inputs.string}}"
+            - run: |
+                echo "String: ${{ inputs.string }}"
+                echo "String: ${{ inputs.number }}"
